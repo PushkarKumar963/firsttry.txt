@@ -1,0 +1,54 @@
+#include<conio.h>
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{       clrscr();
+	int a[100],l=0,x=0,count=0,q=0;
+	printf("Enter the length of input : ");
+	scanf("%d",&l);
+	printf("Enter the input : \n");
+	for(x=0;x<l;x++)
+	{
+		scanf("%d",&a[x]);
+	}
+	for(x=0;x<l;x++)
+	{
+	
+if((a[x]==2)||(a[x]==3)||(a[x]==4)||(a[x]==5)||(a[x]==6)||(a[x]==7)||( 
+a[x]==8)||(a[x]==9))
+		{
+			printf("wrong input");
+			goto end;
+		}
+	}
+	printf("Entered input : ");
+	for(x=0;x<l;x++)
+	{
+		printf("%d",a[x]);
+	}
+	for(x=0;x<l;x++)
+	{
+		if(a[x]==1)
+		{
+			count++;
+		}
+		else
+		{
+			x++;
+		}
+		if(count==5)
+		{
+			for(int p=l+q;p>x;p--)
+			{
+				a[p]=a[p-1];
+			}
+			a[x+1]=0;
+			x=x+2;
+			q++;
+		}
+	}
+	printf("\nencrypted text : ");
+	for(x=0;x<l+q;x++)
+	{
+		printf("%d",a[x]);
+	}
